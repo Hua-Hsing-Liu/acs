@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nanophotonics Device Lab - RCAS</title>
+    
+    <!-- 
+      Method: SYSTEM FONTS for Body + Playfair Display for "Flower" text.
+      1. We use System fonts for everything (to fix Windows Chinese).
+      2. We import JUST "Playfair Display" for the Dr. Name signature.
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          // Pure System Font Stack for the main content
+          fontFamily: {
+            sans: [
+              'Segoe UI', 
+              'Microsoft JhengHei', 
+              '-apple-system', 
+              'BlinkMacSystemFont', 
+              'Roboto', 
+              'Helvetica Neue', 
+              'Arial', 
+              'sans-serif'
+            ],
+            // Add the "Flower" font
+            fancy: ['"Playfair Display"', 'serif'],
+          },
+          extend: {
+            colors: {
+              science: {
+                950: '#08090c',
+                900: '#101217', 
+                800: '#05183C', 
+                700: '#06296B', 
+                600: '#1e3a8a',
+                500: '#3b82f6', 
+                400: '#60a5fa', 
+                300: '#93c5fd',
+                accent: '#2dd4bf', 
+              }
+            },
+            animation: {
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      /* Global Reset & Font Settings */
+      :root {
+        font-family: 'Segoe UI', 'Microsoft JhengHei', sans-serif;
+      }
+
+      /* Force font application globally for content consistency */
+      body, html, #root {
+        background-color: transparent !important; /* Changed to transparent so DynamicBackground is visible */
+        color: #e2e8f0;
+        font-family: 'Segoe UI', 'Microsoft JhengHei', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+      }
+      
+      /* 
+         CRITICAL: Override the global !important for the "fancy" font class.
+         This allows the specific "Dr. Name" text to use Playfair Display 
+         while everything else stays on System Fonts.
+      */
+      .font-fancy {
+        font-family: 'Playfair Display', serif !important;
+      }
+
+      /* Ensure all elements inherit the font by default */
+      * {
+        font-family: inherit;
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #101217; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #06296B; 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #3b82f6; 
+      }
+    </style>
+
+<link rel="stylesheet" href="/index.css">
+<script type="importmap">
+{
+  "imports": {
+    "vite": "https://esm.sh/vite@^7.2.7",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
+    "@google/genai": "https://esm.sh/@google/genai@^1.33.0",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.10.1",
+    "@heroicons/react/": "https://esm.sh/@heroicons/react@^2.2.0/"
+  }
+}
+</script>
+  <script type="module" crossorigin src="/acs/assets/index-fztNUHdn.js"></script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
